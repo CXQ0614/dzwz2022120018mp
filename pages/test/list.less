@@ -1,0 +1,46 @@
+page {	background: #f6faff;	box-sizing: border-box;}.banner {	position: absolute;	left: 0;	top: 0;	width: 100%;	height: 688rpx;}.test-page {	position: relative;	z-index: 2;	.banner-search-box {		width: 100%;		padding: 0 32rpx;
+		margin-bottom: 60rpx;		box-sizing: border-box;	}	.banner-search {		display: flex;		align-items: center;		width: 100%;		height: 84rpx;		background: rgba(255, 255, 255, 0.6);		border-radius: 90rpx;		border: 4rpx solid rgba(18, 49, 129, 0.3);		padding: 0 14rpx 0 30rpx;		box-sizing: border-box;		margin-top: 16rpx;		.search-icon {			margin-right: 14rpx;			width: 36rpx;			height: 36rpx;		}		.u-input {			flex: 1;			font-size: 32rpx;			font-weight: 400;			color: #123181;			line-height: 40rpx;			padding-left: 0 !important;			padding-right: 0 !important;			box-sizing: border-box;		}		.input-placeholder {			font-size: 32rpx;			font-weight: 400;			color: #bccae1;			line-height: 40rpx;		}		.search-button {			display: flex;			justify-content: center;			align-items: center;			width: 128rpx;			height: 60rpx;			background: rgba(217, 233, 252, 0.6);			border-radius: 90rpx;			font-size: 28rpx;			font-weight: 400;			color: #123181;			line-height: 30rpx;			letter-spacing: 2rpx;			margin-left: 14rpx;		}	}}.other {	display: flex;	.tabs {
+		padding-bottom: 30rpx;		width: 118rpx;		.tab-item {
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-bottom: 30rpx;
+			padding: 15rpx 10rpx;			width: 100%;			min-height: 74rpx;			font-size: 28rpx;			font-weight: normal;			color: #000033;			line-height: 40rpx;
+			text-align: center;
+			border-radius: 0 40rpx 40rpx 0;
+			box-sizing: border-box;
+			&:after{
+				position: absolute;
+				left: 0;
+				top: calc(50% - 16rpx);
+				content: '';
+				width: 8rpx;
+				height: 32rpx;
+				background: linear-gradient(134deg, #149CFF 0%, #0975E8 100%);
+				border-radius: 28rpx;
+				opacity: 0;
+			}
+			&.active{
+				color: #0076D6;
+				background-color: #fff;
+				&:after{
+					opacity: 1;
+				}
+			}		}	}
+	.tabs-scroll{
+		width: 118rpx;
+		height: 100%;
+	}  .list-scroll{
+		width: calc(100% - 118rpx);
+	}
+	.list {		padding: 0 30rpx 30rpx;		width: 100%;		box-sizing: border-box;		.list-item {			display: flex;			padding: 20rpx;			margin-bottom: 20rpx;			width: 100%;			background: #fff;			box-shadow: 0 12rpx 60rpx 0 #ddecff;			border-radius: 20rpx;			box-sizing: border-box;			.item-img {				width: 200rpx;				height: 158rpx;				border-radius: 10rpx;			}			.item-right {				width: 310rpx;				margin-left: 25rpx;				padding-top: 4rpx;				box-sizing: border-box;				.item-title {					margin-top: 14rpx;					font-size: 24rpx;					font-weight: 400;					color: #000033;					line-height: 26rpx;					overflow: hidden;					white-space: nowrap;					text-overflow: ellipsis;				}				.item-titles {					margin-top: 4rpx;					font-size: 32rpx;					font-weight: bold;					color: #000033;					line-height: 34rpx;					overflow: hidden;					white-space: nowrap;					text-overflow: ellipsis;				}				.item-text {					margin-top: 14rpx;					font-size: 24rpx;					font-weight: 400;					color: #6c6c87;					line-height: 26rpx;					overflow: hidden;					white-space: nowrap;					text-overflow: ellipsis;				}				.item-content {					display: flex;					justify-content: space-between;					align-items: center;					width: 100%;					margin-top: 32rpx;					.item-time {						background: #fff5dc;						border-radius: 200rpx;						font-size: 20rpx;						font-weight: 400;						color: #a4682c;						line-height: 22rpx;						padding: 8rpx 16rpx;						box-sizing: border-box;					}					.item-task {						font-size: 24rpx;						font-weight: 400;						color: #6c6c87;						line-height: 28rpx;					}					.item-price {						font-size: 36rpx;						font-weight: bold;						color: #f94d43;						line-height: 48rpx;						text {							font-size: 24rpx;							font-weight: bold;							color: #f94d43;							line-height: 28rpx;						}					}				}			}		}
+		.list-none {
+			width: 100%;
+			font-size: 32rpx;
+			font-weight: 400;
+			color: #999;
+			line-height: 34rpx;
+			text-align: center;
+			margin-top: 100rpx;
+		}	}}

@@ -1,0 +1,99 @@
+page {	background: #f6faff;	padding-bottom: 58rpx;	box-sizing: border-box;}.banner {	position: absolute;	left: 0;	top: 0;	width: 100%;	height: 688rpx;}.center-page {	position: relative;	padding: 0 30rpx;	z-index: 2;	.u-nav-slot {		display: flex;		align-items: center;	}	.banner-title {		margin-left: 8rpx;		font-size: 36rpx;		font-weight: bold;		color: #333;		line-height: 42rpx;	}}.avater-box {	position: relative;	display: flex;	align-items: center;	margin-top: 58rpx;	.avater-left {		position: relative;		width: 144rpx;		height: 144rpx;		.avater {			width: 100%;			height: 100%;			border-radius: 50%;			box-sizing: border-box;			&.no {				background-color: #eee;				border: 2rpx solid #fff;			}		}		.edit {			position: absolute;			right: 0;			bottom: 0;			width: 40rpx;			height: 40rpx;		}	}	.avater-center {		width: 350rpx;		padding-left: 25rpx;		.avater-title {			font-size: 36rpx;			font-weight: bold;			color: #000033;			line-height: 42rpx;			overflow: hidden;			white-space: nowrap;			text-overflow: ellipsis;		}		.avater-sign {			position: relative;			margin-top: 25rpx;			padding-left: 40rpx;			padding-right: 15rpx;			width: fit-content;			height: 38rpx;			font-size: 24rpx;			color: #123181;			line-height: 38rpx;			background: #fff;			box-shadow: 0 0 8rpx 0 rgba(105, 138, 255, 0.25);			border-radius: 72rpx;			.icon {				position: absolute;				left: 0;				bottom: 0;				width: 44rpx;				height: 44rpx;			}		}		.avater-text {			padding-top: 10rpx;			font-size: 24rpx;			font-weight: 400;			color: #666a72;			line-height: 28rpx;			overflow: hidden;			white-space: nowrap;			text-overflow: ellipsis;		}	}	.avater-right {		position: absolute;		right: -30rpx;		top: 44rpx;		display: flex;		align-items: center;		justify-content: center;		width: 130rpx;		height: 60rpx;		font-size: 28rpx;		font-weight: 400;		color: #fff;		line-height: 28rpx;		background: linear-gradient(134deg, #149cff 0%, #0975e8 100%);		border-radius: 200rpx 0 0 200rpx;		.phone {			margin-right: 8rpx;			width: 28rpx;			height: 28rpx;		}	}}.account {	display: flex;	align-items: center;	justify-content: space-between;	margin-top: 45rpx;	padding: 30rpx;	width: 100%;	background-repeat: no-repeat;	background-size: cover;	border-radius: 20rpx;	box-sizing: border-box;	.account-left {		.account-top {			display: flex;			align-items: center;			font-size: 28rpx;			font-weight: 400;			color: rgba(255, 255, 255, 0.8);			line-height: 33rpx;			.look {				margin-left: 10rpx;				width: 28rpx;				height: 21rpx;			}			.close {				margin-left: 10rpx;				width: 29rpx;				height: 13rpx;			}		}		.account-money {			margin-top: 30rpx;			min-height: 70rpx;			font-size: 68rpx;			font-weight: bold;			color: #fff;			line-height: 56rpx;			.symbol {				margin-right: 15rpx;				font-weight: 400;				font-size: 40rpx;			}		}	}	.account-right {		display: flex;		align-items: center;		justify-content: center;		width: 145rpx;		height: 58rpx;		font-size: 24rpx;		font-weight: 400;		color: #0076d6;		line-height: 28rpx;		background: #fff;		border-radius: 62rpx;	}}.center-tab {	display: flex;	flex-wrap: wrap;
+	justify-content: space-around;	margin-top: 30rpx;	padding: 30rpx;	width: 100%;	background: #fff;	box-shadow: 0 12rpx 60rpx 0 #ddecff;	border-radius: 20rpx;	box-sizing: border-box;	.tab-item {		display: flex;		flex-direction: column;		align-items: center;		justify-content: center;		.tab-icon {			width: 100rpx;			height: 114rpx;		}		.tab-title {			width: 100%;			font-size: 28rpx;			font-weight: 400;			color: #000033;			line-height: 33rpx;			text-align: center;		}	}}
+
+.bottom-nav{
+	padding: 0 30rpx;
+	margin-top: 30rpx;
+	width: 100%;
+	background: #FFFFFF;
+	box-shadow: 0 12rpx 60rpx 0 #DDECFF;
+	border-radius: 20rpx;
+	box-sizing: border-box;
+	.button{
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+	}
+	.nav-item{
+		position: relative;
+		display: flex;
+		justify-content: space-between;
+		padding: 30rpx 0;
+		.nav-left{
+			display: flex;
+			.item-icon{
+				margin-right: 15rpx;
+				width: 40rpx;
+				height: 40rpx;
+			}
+			.item-title{
+				font-size: 32rpx;
+				font-weight: 400;
+				color: #000033;
+				line-height: 38rpx;
+			}
+		}
+		.arrow{
+			width: 14rpx;
+			height: 25rpx;
+		}
+	}
+}
+
+.login{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 45rpx;
+	width: 100%;
+	height: 88rpx;
+	font-size: 32rpx;
+	font-weight: 400;
+	color: #FFF;
+	line-height: 38rpx;
+	background: linear-gradient(134deg, #149CFF 0%, #0975E8 100%);
+	border-radius: 90rpx;
+}
+.scan {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80rpx 30rpx;
+  width: 690rpx;
+  background: #fff;
+  border-radius: 40rpx;
+  box-sizing: border-box;
+
+  .close {
+    position: absolute;
+    right: 20rpx;
+    top: 20rpx;
+    width: 50rpx;
+    height: 50rpx;
+  }
+
+  .scan-title {
+    font-size: 36rpx;
+    font-weight: 400;
+    color: #000033;
+    line-height: 48rpx;
+  }
+
+  .scan-blue-title {
+    font-size: 36rpx;
+    font-weight: bold;
+    color: #0076d6;
+    line-height: 48rpx;
+  }
+
+  .qr {
+    margin-top: 48rpx;
+    width: 224rpx;
+    height: 224rpx;
+  }
+}

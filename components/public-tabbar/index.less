@@ -1,0 +1,72 @@
+.like-tabbar {
+	width: 100%;
+	.tabbar-bottom {
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+		height: 128rpx;
+		padding: 0 55rpx;
+		background-color: #fff;
+		box-shadow: 0 -10rpx 40rpx 0 rgba(165, 180, 199, 0.3);
+		z-index: 10;
+		box-sizing: border-box;
+		.menu-item {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			height: 100%;
+			.icon-box {
+				position: relative;
+				width: 52rpx;
+				height: 52rpx;
+				.icon {
+					position: absolute;
+					left: 0;
+					top: 0;
+					width: 100%;
+					height: 100%;
+					transition: all 0.3s;
+					&.one {
+						opacity: 0;
+					}
+					&.two {
+						opacity: 1;
+					}
+				}
+			}
+			.menu-text {
+				margin-top: 5rpx;
+				font-size: 24rpx;
+				font-weight: 400;
+				color: #666a72;
+				line-height: 28rpx;
+				transition: all 0.3s;
+			}
+			&.checked {
+				.menu-text {
+					font-weight: bold;
+					color: #000033;
+				}
+				.icon-box {
+					.icon {
+						&.one {
+							opacity: 1;
+						}
+						&.two {
+							opacity: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+	.bottom-block {
+		width: 100%;
+		height: 128rpx;
+	}
+}

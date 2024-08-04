@@ -1,0 +1,261 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/home/index",
+			"style": {
+				"navigationBarTitleText": "蓝鸟心理咨询",
+				"disableScroll": false,
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/course/index",
+			"style": {
+				"navigationBarTitleText": "心理课程",
+				"disableScroll": false,
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/course/detail",
+			"style": {
+				"navigationBarTitleText": "课程详情",
+				"disableScroll": false,
+				"navigationStyle": "custom"
+			}
+		},{
+			"path": "pages/course/apply",
+			"style": {
+				"navigationBarTitleText": "心理课程-提交订单",
+				"disableScroll": false,
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/consult/index",
+			"style": {
+				"navigationBarTitleText": "心理咨询",
+				"disableScroll": false,
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/consult/detail",
+			"style": {
+				"navigationBarTitleText": "心理咨询",
+				"disableScroll": false,
+				"navigationStyle": "custom"
+			}
+		},{
+			"path": "pages/consult/apply",
+			"style": {
+				"navigationBarTitleText": "咨询师预约",
+				"disableScroll": false,
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/test/index",
+			"style": {
+				"navigationBarTitleText": "心理测评",
+				"disableScroll": false,
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/test/list",
+			"style": {
+				"navigationBarTitleText": "心理测评列表",
+				"disableScroll": false,
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/test/detail",
+			"style": {
+				"navigationBarTitleText": "心理测评详情",
+				"disableScroll": false,
+				"navigationStyle": "custom"
+			}
+		},{
+			"path": "pages/test/apply",
+			"style": {
+				"navigationBarTitleText": "心理测评-提交订单",
+				"disableScroll": false,
+				"navigationStyle": "custom"
+			}
+		},{
+			"path": "pages/test/report",
+			"style": {
+				"navigationBarTitleText": "心理测评-测评报告",
+				"disableScroll": false,
+				"navigationStyle": "custom"
+			}
+		},{
+			"path": "pages/test/test",
+			"style": {
+				"navigationBarTitleText": "心理测评-测评流程",
+				"disableScroll": false,
+				"navigationStyle": "custom"
+			}
+		},{
+			"path": "pages/test/result",
+			"style": {
+				"navigationBarTitleText": "心理测评-完成测评",
+				"disableScroll": false,
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/center/index",
+			"style": {
+				"navigationBarTitleText": "蓝鸟心理咨询",
+				"disableScroll": false,
+				"navigationStyle": "custom"
+			}
+		},{
+			"path": "pages/order/index",
+			"style": {
+				"navigationBarTitleText": "我的订单",
+				"disableScroll": false,
+				"navigationStyle": "custom"
+			}
+		},{
+			"path": "pages/order/consultDetail",
+			"style": {
+				"navigationBarTitleText": "心理咨询-订单详情",
+				"disableScroll": false,
+				"navigationStyle": "custom"
+			}
+		},{
+			"path": "pages/order/courseDetail",
+			"style": {
+				"navigationBarTitleText": "心理课程-订单详情",
+				"disableScroll": false,
+				"navigationStyle": "custom"
+			}
+		},{
+			"path": "pages/order/testDetail",
+			"style": {
+				"navigationBarTitleText": "心理测评-订单详情",
+				"disableScroll": false,
+				"navigationStyle": "custom"
+			}
+		},{
+			"path": "pages/order/result",
+			"style": {
+				"navigationBarTitleText": "支付成功",
+				"disableScroll": false,
+				"navigationStyle": "custom"
+			}
+		},{
+			"path": "pages/center/help",
+			"style": {
+				"navigationBarTitleText": "帮助中心",
+				"disableScroll": false,
+				"navigationStyle": "custom"
+			}
+		},{
+			"path": "pages/center/feedback",
+			"style": {
+				"navigationBarTitleText": "建议反馈",
+				"disableScroll": false,
+				"navigationStyle": "custom"
+			}
+		},{
+			"path": "pages/token/index",
+			"style": {
+				"navigationBarTitleText": "我的券码",
+				"disableScroll": false,
+				"navigationStyle": "custom"
+			}
+		},{
+			"path": "pages/collect/index",
+			"style": {
+				"navigationBarTitleText": "我的收藏",
+				"disableScroll": false,
+				"navigationStyle": "custom"
+			}
+		},{
+			"path": "pages/search/index",
+			"style": {
+				"navigationBarTitleText": "搜索页",
+				"disableScroll": false,
+				"navigationStyle": "custom"
+			}
+		},{
+			"path": "pages/center/balance",
+			"style": {
+				"navigationBarTitleText": "余额明细",
+				"disableScroll": false,
+				"navigationStyle": "custom"
+			}
+		},{
+			"path": "pages/consultant/login",
+			"style": {
+				"navigationBarTitleText": "注册登录",
+				"disableScroll": false,
+				"navigationStyle": "custom"
+			}
+		}, {
+			"path": "pages/center/info",
+			"style": {
+				"navigationBarTitleText": "我的信息",
+				"disableScroll": false,
+        "navigationStyle": "custom"
+      }
+    }, {
+			"path": "pages/consultant/center",
+			"style": {
+				"navigationBarTitleText": "个人中心",
+				"disableScroll": false,
+        "navigationStyle": "custom"
+      }
+    }, {
+			"path": "pages/consultant/list",
+			"style": {
+				"navigationBarTitleText": "个人中心",
+				"disableScroll": false,
+        "navigationStyle": "custom"
+      }
+    }, {
+			"path": "pages/consultant/detail",
+			"style": {
+				"navigationBarTitleText": "订单详情",
+				"disableScroll": false,
+        "navigationStyle": "custom"
+      }
+    },{
+			"path": "pages/center/about",
+			"style": {
+				"navigationBarTitleText": "关于我们",
+				"disableScroll": false,
+        "navigationStyle": "custom"
+      }
+    },{
+			"path": "pages/consultant/calendar",
+			"style": {
+				"navigationBarTitleText": "排班日历",
+				"disableScroll": false,
+        "navigationStyle": "custom"
+      }
+    },
+      {
+        "path": "pages/webview/index",
+        "style": {
+          "navigationBarTitleText": "",
+          "disableScroll": false,
+          "navigationStyle": "custom"
+        }
+      }
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"easycom": {
+		"^u-(.*)": "@/uni_modules/uview-ui/components/u-$1/u-$1.vue"
+	}
+}

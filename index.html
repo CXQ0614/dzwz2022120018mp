@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>订阅提醒</title>
+  <style>
+    .icon {
+      display: block;
+      width: 30%;
+      height: 30%;
+      margin: 40% auto 30px;
+    }
+
+    .text {
+      font-size: 20px;
+      text-align: center;
+      max-width: 850%;
+      margin: 0 auto;
+      line-height: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <img src="./loading.png" alt="" class="icon" id="icon">
+  <div class="text " id="text">订阅中，请稍等...</div>
+  <!-- <div class="text"></div> -->
+  <!-- <div id="code"></div>
+  <div id="type"></div>
+  <div id="userId"></div> -->
+  <script>
+
+    function queryURLParams (url) {
+      let pattern = /(\w+)=(\w+)/ig;
+      let parames = {};
+      url.replace(pattern, ($, $1, $2) => {
+        parames[$1] = $2;
+      });
+      return parames;
+    }
+    // console.log('window.location.href', window.location.href);
+
+    let urlParams = queryURLParams(window.location.href)
+    var code = urlParams.code
+    var state = urlParams.state
+    var type = ''
+    var id = 0
+    console.log(state.substring(0, 6));
+    if (state.substring(0, 6) == 'MEMBER') {
+      type = 'MEMBER'
+      id = Number(state.substring(6))
+      // console.log('id', id);
+    } else if (state.substring(0, 10) == 'CONSULTANT') {
+      type = 'CONSULTANT'
+      id = Number(state.substring(10))
+      // console.log('id', id);
+
+    }
+    // console.log('urlParams', urlParams);
+
+    // var codeDom = document.getElementById('code')
+    // codeDom.innerHTML = `<div>code:${code}</div>`
+    // var typeDom = document.getElementById('type')
+    // typeDom.innerHTML = `<div>type:${type}</div>`
+    // var idDom = document.getElementById('userId')
+    // idDom.innerHTML = `<div>id:${id}</div>`
+
+    function getOpenId () {
+      const xhr = new XMLHttpRequest();
+      xhr.open('GET', `http://dzwz2022120018.idea-source.net/api/WxChatUsers/getWxOpenid?code=${code}&type=${type}&id=${id}`);
+      // xhr.open('GET', `https://www.lanniaoxl.com/api/WxChatUsers/getWxOpenid?code=${code}&type=${type}&id=${id}`);
+      // xhr.setRequestHeader('Content-Type', 'application/json');
+      xhr.send();
+      xhr.onreadystatechange = function () {
+        var icon = document.getElementById('icon')
+        var text = document.getElementById('text')
+        // var loading = document.getElementById('loading-text')
+        var res = JSON.parse(xhr.response)
+
+        if (xhr.status === 200) {
+          // console.log(xhr);
+          // console.log(res);
+          if (res.errcode == 0) {
+            icon.src = './success.png'
+            text.innerHTML = '<span>订阅成功！</span> <br> 请点击左上角关闭或返回按钮返回小程序'
+          } else {
+            icon.src = './fail.png'
+            text.innerHTML = '<span>订阅失败，请重试！</span>'
+          }
+
+        } else {
+          console.error(`Error: ${xhr.responseText}`);
+          icon.src = './fail.png'
+          text.innerHTML = '<span>订阅失败，请重试！</span>'
+        }
+      };
+    }
+    getOpenId()
+
+
+
+  </script>
+</body>
+
+
+</html>
