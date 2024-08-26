@@ -805,9 +805,10 @@ export default {
     //取消订单接口
     cancelOrder() {
       console.log('取消订单')
-      if (!this.cancelFlag) {
-        this.cancelFlag = false
+      if (!this.cancelFlag || this.model.order_state == 20) {
+         return false
       }
+	  this.cancelFlag = false
       var self = this
       let params = {
         id: this.Id
