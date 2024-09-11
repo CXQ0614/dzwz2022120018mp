@@ -1,12 +1,12 @@
 var baseUrl=''
 if(process.env.NODE_ENV === 'development'){
 	//开发环境 改地址记得看一下public.js中的上传图片地址
-	baseUrl='http://www.dzwz2022120018.idea-source.net/'
-  // baseUrl='https://www.lanniaoxl.com/'
+	//baseUrl='http://www.dzwz2022120018.idea-source.net/'
+    baseUrl='https://www.lanniaoxl.com/'
 }else{
 	//生产环境
-   baseUrl='http://www.dzwz2022120018.idea-source.net/'
-  // baseUrl = 'https://www.lanniaoxl.com/'
+   //baseUrl='http://www.dzwz2022120018.idea-source.net/'
+    baseUrl = 'https://www.lanniaoxl.com/'
 
 }
 

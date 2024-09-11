@@ -157,7 +157,7 @@
       <!-- 待支付 -->
       <view class="btns" v-if="model.order_state == 0">
         <view class="btn" @click="openCancelShow">取消订单</view>
-        <view class="btn pay" @clikc="pay">立即支付</view>
+        <view class="btn pay" @click="pay">立即支付</view>
       </view>
       <!-- 待咨询 -->
       <view class="btns" v-if="model.order_state == 5">
