@@ -41,8 +41,8 @@ export const publicMixin = {
 				title: '上传中'
 			});
 			uni.uploadFile({
-        url: 'http://www.dzwz2022120018.idea-source.net/api/MemberApi/ueUpload', // 开发者服务器的URL。
-        // url: 'https://www.lanniaoxl.com/api/MemberApi/ueUpload', // 开发者服务器的URL。
+                 //url: 'http://www.dzwz2022120018.idea-source.net/api/MemberApi/ueUpload', // 开发者服务器的URL。
+                url: 'https://www.lanniaoxl.com/api/MemberApi/ueUpload', // 开发者服务器的URL。
 				filePath: filePath,
 				header: {
 					'Authorization': 'Bearer ' + uni.getStorageSync('token')
