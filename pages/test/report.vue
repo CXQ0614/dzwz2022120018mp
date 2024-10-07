@@ -144,7 +144,7 @@ export default {
 			  				// 	mask: true,
 			  				// 	title: '文件已保存：' + result.savedFilePath, //保存路径
 			  				// 	duration: 3000,
-         //                    });
+                            //  });
 			  				setTimeout(() => {
 			  					//打开文档查看
 			  					uni.openDocument({
