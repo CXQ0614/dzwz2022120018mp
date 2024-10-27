@@ -311,7 +311,7 @@ export default {
         if (res.errcode == 0) {
           console.log(res)
           self.order_number = res.order_number
-          self.order_id = res.order_id
+          self.order_id = parseInt(res.order_id)
           // 微信支付
           if (self.payWay == 1) {
             self.pay()
@@ -355,7 +355,7 @@ export default {
               console.log(payRes)
               if (payRes.errMsg === 'requestPayment:fail cancel') {
                 uni.redirectTo({
-                  url: '/pages/order/courseDetail?id=' + self.order_id
+                  url: '/pages/order/testDetail?id=' + self.order_id
                 })
               } else {
                 uni.showModal({

@@ -70,8 +70,8 @@
 
     function getOpenId () {
       const xhr = new XMLHttpRequest();
-      xhr.open('GET', `http://dzwz2022120018.idea-source.net/api/WxChatUsers/getWxOpenid?code=${code}&type=${type}&id=${id}`);
-      // xhr.open('GET', `https://www.lanniaoxl.com/api/WxChatUsers/getWxOpenid?code=${code}&type=${type}&id=${id}`);
+      // xhr.open('GET', `http://dzwz2022120018.idea-source.net/api/WxChatUsers/getWxOpenid?code=${code}&type=${type}&id=${id}`);
+      xhr.open('GET', `https://www.lanniaoxl.com/api/WxChatUsers/getWxOpenid?code=${code}&type=${type}&id=${id}`);
       // xhr.setRequestHeader('Content-Type', 'application/json');
       xhr.send();
       xhr.onreadystatechange = function () {

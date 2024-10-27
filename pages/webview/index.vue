@@ -16,8 +16,8 @@ export default {
       urls: '',
       id: '',
       type: '', // MEMBER用户 CONSULTANT咨询师
-      redirectUrl: 'http://dzwz2022120018.idea-source.net/index.html',
-      // redirectUrl: 'https://www.lanniaoxl.com/index.html',
+      //redirectUrl: 'http://dzwz2022120018.idea-source.net/index.html',
+      redirectUrl: 'https://www.lanniaoxl.com/index.html',
     };
   },
   onLoad (option) {

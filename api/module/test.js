@@ -31,6 +31,11 @@ export default {
 	  let res = await $post('api/EvaluationApi/AnswerResult', obj)
 	  return res
 	},
+	// 下载报告
+	async postReportUrl(obj) {
+	  let res = await $post('api/ReportApi/Url', obj)
+	  return res
+	},
 	// 试题最后一题
 	async postEvaluationAnswerTop(obj) {
 	  let res = await $post('api/EvaluationApi/AnswerTop', obj)

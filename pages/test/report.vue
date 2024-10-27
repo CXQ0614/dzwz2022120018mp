@@ -63,7 +63,7 @@
       </view>
     </view>
     <view class="fix-bottom"
-      ><view class="btn" @click="donwload">下载报告</view></view
+      ><view class="btn" @click="donwloadReport">下载报告</view></view
     >
     <view @click="exchangeShow = true" class="customer-icon"
       ><image
@@ -93,6 +93,7 @@ export default {
     return {
       Id: '',
       model: {},
+	  flag:false,
       authoShow: false, // 授权弹窗显示
       color: 'transparent', // 导航栏的背景颜色
       titleColor: '#fff', // 标题和箭头颜色
@@ -118,15 +119,58 @@ export default {
         }
       })
     },
-    donwload(url) {
-      uni.downloadFile({
-        url: url,
-        success: (res) => {
-          if (res.statusCode === 200) {
-            console.log('下载成功')
-          }
-        }
-      })
+    donwloadReport() {
+	   if(this.flag){
+		   return false
+	   }
+	   this.flag = true
+	   let params = {
+		 id: this.Id
+	   }
+	   this.$api.test.postReportUrl(params).then((res) => {
+		  if (res.errcode == 0) {
+		    uni.downloadFile({
+		      url: res.url,
+			  success: (data) => {
+				this.flag = false
+			  	if (data.statusCode === 200) {
+			  	//文件保存到本地
+			  		uni.saveFile({
+			  			tempFilePath: data.tempFilePath, //临时路径
+			  			success: function(result) {
+						    console.log(result)
+			  				// uni.showToast({
+			  				// 	icon: 'none',
+			  				// 	mask: true,
+			  				// 	title: '文件已保存：' + result.savedFilePath, //保存路径
+			  				// 	duration: 3000,
+         //                    });
+			  				setTimeout(() => {
+			  					//打开文档查看
+			  					uni.openDocument({
+			  						filePath: result.savedFilePath,
+									showMenu:true, //关键点
+			  						success: function(result) {
+			  						 // console.log('打开文档成功');
+			  						}
+			  					});
+			  				}, 100)
+			  			}
+			  		});
+			  	}
+		      },
+			  fail: (err) => {
+				this.flag = false
+			  	console.log(err);
+			  	uni.showToast({
+			  		icon: 'none',
+			  		mask: true,
+			  		title: '下载失败,请重新下载',
+			  	});
+              },
+	       })
+		}
+	  })
     },
     // 子组件向父组件传值
     closeMain(e) {

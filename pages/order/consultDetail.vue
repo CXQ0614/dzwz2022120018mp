@@ -157,7 +157,7 @@
       <!-- 待支付 -->
       <view class="btns" v-if="model.order_state == 0">
         <view class="btn" @click="openCancelShow">取消订单</view>
-        <view class="btn pay" @clikc="pay">立即支付</view>
+        <view class="btn pay" @click="pay">立即支付</view>
       </view>
       <!-- 待咨询 -->
       <view class="btns" v-if="model.order_state == 5">
@@ -565,6 +565,28 @@ export default {
     if (option) {
       this.Id = option.id
     }
+	var callPermissions = uni.getStorageSync('callPermissions') //摄像头、麦克风权限
+	console.log('callPermissions', callPermissions)
+	if (!callPermissions) {
+	  uni.showModal({
+	    title: '提示',
+	    content: '与咨询师通话需要授权摄像头、麦克风权限，是否同意',
+	    success: function (res) {
+	      if (res.confirm) {
+	        wx.setEnable1v1Chat({
+	          enable: true,
+	          success: (res) => {
+	            console.log(res, 'res')
+	            uni.setStorageSync('callPermissions', true)
+	          },
+	          fail: (err) => {
+	            console.log('err', err)
+	          }
+	        })
+	      }
+	    }
+	  })
+	}
     this.currentYear = new Date().getFullYear()
     this.currentMonth = new Date().getMonth() + 1
   },
@@ -776,6 +798,14 @@ export default {
             listener: {
               nickname: self.model.main_title,
               openid: self.model.associationModel.open_id
+            },
+            success(res) {
+              console.log('[呼叫成功]res', res)
+              console.log('呼叫方：', self.model.associationModel.open_id)
+              console.log('接听方：', self.getOpenId())
+            },
+            fail(err) {
+              console.log('[呼叫失败]err', err)
             }
           })
         },

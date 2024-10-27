@@ -172,7 +172,7 @@
       </u-popup>
     </view>
 
-    <!-- 公众号 -->
+    <!-- 开启订阅提醒 -->
     <exchange
       :show="exchangeShow"
       :follow="true"
@@ -202,7 +202,7 @@ export default {
       plagueList: [], // 困扰
 
       showApply: false, //订单弹窗
-      exchangeShow: false, //公众号弹窗
+      exchangeShow: false, //开启订阅弹窗
 
       baseUrl:'',
     }

@@ -226,6 +226,28 @@ export default {
 		if (option.type) {
 			this.association_type = option.type;
 		}
+		var callPermissions = uni.getStorageSync('callPermissions') //摄像头、麦克风权限
+		console.log('callPermissions', callPermissions)
+		if (!callPermissions) {
+		  uni.showModal({
+		    title: '提示',
+		    content: '与咨询师通话需要授权摄像头、麦克风权限，是否同意',
+		    success: function (res) {
+		      if (res.confirm) {
+		        wx.setEnable1v1Chat({
+		          enable: true,
+		          success: (res) => {
+		            console.log(res, 'res')
+		            uni.setStorageSync('callPermissions', true)
+		          },
+		          fail: (err) => {
+		            console.log('err', err)
+		          }
+		        })
+		      }
+		    }
+		  })
+		}
 		//订单状态
 		this.getStateList();
 	},
@@ -403,11 +425,12 @@ export default {
 		},
 		enterConsult(item) {
 			var self = this
-      console.log('item',item);
+            console.log('item',item);
 			console.log('uni.getStorageSync(NickName)',item.name)
 			console.log('self.getOpenId()',self.getOpenId())
 			console.log('item.associationModel.nickname',item.main_title)
 			console.log('item.associationModel.open_id',item.associationModel.open_id)
+				
 			wx.setEnable1v1Chat({
 				enable: true,
 				success: res => {
@@ -421,14 +444,14 @@ export default {
 							nickname: item.main_title,
 							openid: item.associationModel.open_id
 						},
-            success(res) {
-              console.log('[呼叫成功]res', res)
-              console.log('呼叫方：', self.getOpenId())
-              console.log('接听方：', self.model.associationModel.open_id)
-            },
-            fail(err) {
-              console.log('[呼叫失败]err', err)
-            }
+                        success(res) {
+                            console.log('[呼叫成功]res', res)
+                            console.log('呼叫方：', self.getOpenId())
+                            console.log('接听方：', item.associationModel.open_id)
+                        },
+                        fail(err) {
+                            console.log('[呼叫失败]err', err)
+                        }
 					});
 				},
 				fail: err => {

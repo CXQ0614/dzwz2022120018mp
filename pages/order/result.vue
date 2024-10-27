@@ -120,6 +120,28 @@ export default {
       this.type = option.type
       if (option.type == 1) {
         this.title = '咨询师预约'
+		var callPermissions = uni.getStorageSync('callPermissions') //摄像头、麦克风权限
+		console.log('callPermissions', callPermissions)
+		if (!callPermissions) {
+		  uni.showModal({
+		    title: '提示',
+		    content: '与咨询师通话需要授权摄像头、麦克风权限，是否同意',
+		    success: function (res) {
+		      if (res.confirm) {
+		        wx.setEnable1v1Chat({
+		          enable: true,
+		          success: (res) => {
+		            console.log(res, 'res')
+		            uni.setStorageSync('callPermissions', true)
+		          },
+		          fail: (err) => {
+		            console.log('err', err)
+		          }
+		        })
+		      }
+		    }
+		  })
+		}
       } else if (option.type == 2) {
         this.title = '课程购买'
       } else if (option.type == 3) {
